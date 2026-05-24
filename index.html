@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Frankie Kim — Thoughts in Passing</title>
+<meta name="description" content="Sermons, essays, and theological reflections by Hyoungjin (Frankie) Kim — pastor, writer, and theologian working between Anabaptist and Wesleyan traditions." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --bg-card: #ffffff;
+    --ink: #1f1d1a;
+    --ink-soft: #4a463f;
+    --ink-mute: #8a8478;
+    --accent: #2f5d62;
+    --accent-soft: #d9e4e2;
+    --rule: #e8e2d6;
+    --serif-en: 'EB Garamond', Georgia, serif;
+    --serif-kr: 'Noto Serif KR', 'EB Garamond', serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--serif-en);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-size: 19px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4.5rem 1.75rem 6rem;
+  }
+
+  /* ===== Header ===== */
+  header {
+    margin-bottom: 4rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: var(--serif-en);
+    font-weight: 500;
+    font-size: 2.75rem;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .intro {
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 60ch;
+  }
+
+  .intro p + p { margin-top: 1rem; }
+
+  .meta {
+    margin-top: 1.75rem;
+    font-size: 0.95rem;
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+
+  .meta a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .meta a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ===== Section ===== */
+  section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: var(--serif-en);
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: -0.005em;
+  }
+
+  .section-note {
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+
+  /* ===== Entry list ===== */
+  ul.entries {
+    list-style: none;
+  }
+
+  ul.entries li {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  ul.entries li:last-child {
+    border-bottom: none;
+  }
+
+  ul.entries a {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.2s ease;
+  }
+
+  ul.entries a:hover {
+    transform: translateX(4px);
+  }
+
+  ul.entries a:hover .entry-title {
+    color: var(--accent);
+  }
+
+  .entry-date {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .entry-title {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.4;
+    transition: color 0.2s;
+  }
+
+  .entry-title.kr {
+    font-family: var(--serif-kr);
+    font-weight: 500;
+  }
+
+  .entry-snippet {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-top: 0.4rem;
+    line-height: 1.55;
+  }
+
+  .entry-snippet.kr {
+    font-family: var(--serif-kr);
+  }
+
+  /* ===== Empty placeholder ===== */
+  .empty {
+    padding: 1.5rem 1.5rem;
+    background: var(--bg-card);
+    border: 1px dashed var(--rule);
+    border-radius: 4px;
+    color: var(--ink-mute);
+    font-size: 0.95rem;
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    margin-top: 5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--ink-mute);
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  footer .mark {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin: 0 0.75rem;
+    vertical-align: middle;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 540px) {
+    body { font-size: 17px; }
+    .container { padding: 3rem 1.25rem 4rem; }
+    h1 { font-size: 2.1rem; }
+    .intro { font-size: 1.05rem; }
+    .section-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+  }
+
+  /* ===== Subtle entrance ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  header, section, footer {
+    animation: fadeUp 0.6s ease-out backwards;
+  }
+
+  header { animation-delay: 0.05s; }
+  section:nth-of-type(1) { animation-delay: 0.15s; }
+  section:nth-of-type(2) { animation-delay: 0.25s; }
+  section:nth-of-type(3) { animation-delay: 0.35s; }
+  footer { animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="eyebrow">Frankie Kim · 김형진</div>
+    <h1>Thoughts in <em>passing</em>,<br />kept on purpose.</h1>
+    <div class="intro">
+      <p>I'm a pastor at Yorkton Alliance Church in Saskatchewan. My work sits at an unusual crossroads — Anabaptist convictions, Wesleyan instincts, and a Korean voice speaking into a Canadian congregation.</p>
+      <p>This is where I keep what would otherwise drift away: a sermon written for one Sunday, a thought first posted at midnight, a chapter from the dissertation I'm finishing on Zwingli and Hubmaier. Some of it is in English. Some in Korean. All of it is unfinished in the way most honest theology is.</p>
+      <div class="meta">
+        Yorkton, SK &middot; <a href="https://sites.google.com/view/sermonbyfrankie/home" target="_blank" rel="noopener">Sermon archive</a> &middot; <a href="https://www.threads.net/" target="_blank" rel="noopener">Threads</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== SERMONS ===================== -->
+  <section>
+    <div class="section-head">
+      <h2>Sermons</h2>
+      <span class="section-note">weekly · in Korean</span>
+    </div>
+    <ul class="entries">
+      <!-- 예시 항목 (실제 파일 추가하면 활성화):
+      <li>
+        <a href="sermons/2026-05-11.html">
+          <span class="entry-date">2026 · 05 · 11 · Mother's Day</span>
+          <span class="entry-title kr">무릎 꿇으시는 하나님</span>
+          <span class="entry-snippet kr">이사야 66:12–13 · 어머니를 위로의 도구가 아닌 위로의 수신자로</span>
+        </a>
+      </li>
+      -->
+      <li>
+        <div class="empty">아직 올라온 설교가 없습니다 — 곧 채워질 자리</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== ESSAYS ===================== -->
+  <section>
+    <div class="section-head">
+      <h2>Essays &amp; Reflections</h2>
+      <span class="section-note">from Threads, expanded</span>
+    </div>
+    <ul class="entries">
+      <!-- 예시:
+      <li>
+        <a href="essays/calling-as-perception.html">
+          <span class="entry-date">2026 · 04</span>
+          <span class="entry-title kr">소명은 일이 아닌 인식의 전환점</span>
+          <span class="entry-snippet kr">롬 12:2 — 하나님이 일을 주시는 게 아니라, 내가 새롭게 보기 시작하는 그 자리</span>
+        </a>
+      </li>
+      -->
+      <li>
+        <div class="empty">준비 중 — coming soon</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== TEACHING ===================== -->
+  <section>
+    <div class="section-head">
+      <h2>Teaching &amp; Study</h2>
+      <span class="section-note">discipleship pages, course notes</span>
+    </div>
+    <ul class="entries">
+      <li>
+        <div class="empty">양육 프로그램 자료가 여기 올라옵니다</div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Hyoungjin Kim
+    <span class="mark"></span>
+    written slowly, shared freely
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
